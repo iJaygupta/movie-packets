@@ -1,0 +1,11 @@
+.has-search {
+  height: 50px;
+  position: relative;
+
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+  width: 200%;
+  height: 45px;
+}

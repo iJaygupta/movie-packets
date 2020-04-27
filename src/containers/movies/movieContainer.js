@@ -20,11 +20,12 @@ class MovieContainer extends Component {
         this.getMovieListing();
 
     }
- 
+
     getMovieListing(page) {
         this.props.moviesAction.getMoviesList(page, (response) => {
         })
     }
+
     isBottom(el) {
         return el.getBoundingClientRect().bottom <= window.innerHeight;
     }
@@ -53,15 +54,15 @@ class MovieContainer extends Component {
                 console.log("searchMovieList ==> ", response)
             })
         } else {
-            this.getMovieListing();
+            this.props.moviesAction.resetMovies(() => {
+                this.getMovieListing();
+            })
 
         }
-
-
     }
 
     render() {
-      
+
         console.log("this.props ==>>", this.props)
 
         return (

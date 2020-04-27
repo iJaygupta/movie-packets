@@ -2,8 +2,6 @@ import api from '../../lib/request';
 import apiPaths from '../../lib/api';
 import { API_KEY, API_KEY_ALT } from '../../config';
 
-// const API_KEY = '?api_key=4d4ed145d3584846f5922b6a467e1f85';
-
 
 const movies = {
     getMoviesList: function (page, callback) {
@@ -33,7 +31,7 @@ const movies = {
                     type: 'getMovieDetail',
                     data: response.data
                 });
-                callback(response.data);
+                // callback(response.data);
             }, dispatch)
         }
     },
@@ -46,7 +44,7 @@ const movies = {
                     type: 'getCastDetail',
                     data: response.data
                 });
-                callback(response.data);
+                // callback(response.data);
             }, dispatch)
         }
     },
@@ -62,11 +60,31 @@ const movies = {
                 callback(response.data);
             }, dispatch)
         }
-    }
+    },
+    getTrailer: function (movieId, callback) {
+        const getTrailerUrl = `${apiPaths.getMovieDetail}${movieId}/videos?api_key=${"f20830dbe33d000f4cc0e0060585f718"}`
 
+        return dispatch => {
+            api.setMethod('GET').sendRequest(getTrailerUrl, null, false, function (response) {
+                console.log(response);
+                dispatch({
+                    type: 'getTrailer',
+                    data: response.data.results
+                });
+                // callback(response.data);
+            }, dispatch)
+        }
+    },
+    resetMovies: function (callback) {
 
-
-
+        return dispatch => {
+            dispatch({
+                type: 'resetMovies',
+                data: []
+            });
+            callback();
+        }
+    },
 }
 
 export default movies;

@@ -4,13 +4,10 @@
   "private": true,
   "dependencies": {
     "3.0.0": "^3.0.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "latest": "^0.2.0",
     "react": "^16.13.1",
-    "react-autosuggest": "^9.0.0",
+    "bootstrap": "4.4.1",
     "react-bootstrap": "1.0.0",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
@@ -35,16 +32,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": {}
 }

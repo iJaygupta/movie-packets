@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MovieList from '../../components/movies/movieList';
 import DisplayMessage from '../../components/movies/displayMessage';
-import { Navbar, Nav, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import './search.css'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
